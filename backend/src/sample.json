@@ -20,5 +20,16 @@
         "username": "sedelgado",
         "projects": ["Proyecto1", "Proyecto3"]
     }],
-    "projects": ["Proyecto1", "Proyecto2", "Proyecto3"]
+    "projects": [{
+        "id": 1,
+        "project_name": "Proyecto1"
+    }, 
+    {
+        "id": 2,
+        "project_name": "Proyecto2"
+    }, 
+    {
+        "id": 3,
+        "project_name": "Proyecto3"
+    }]
 }

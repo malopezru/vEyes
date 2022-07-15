@@ -11,14 +11,17 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     const { first_name, last_name, username, projects } = req.body;
-    if (first_name && last_name && username && projects){
-        const id = users.length + 1;
+    console.log(first_name)/* 
+    if (first_name && last_name && username && projects){ */
+        const id = users.users.length + 1;
         const newUser = {id, ...req.body};
-        users.push(newUser);
+        console.log(newUser)
+        users.users.push(newUser);
         res.json(users);
-    } else {
+    /* } else {
+        console.log('Wrong Request')
         res.send('Wrong Request');
-    }
+    } */
 });
 
 router.put('/:id', (req, res) => {
@@ -40,10 +43,11 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     const { id } = req.params;
-    _.each(users, (user, i) => {
-        if (user.id == id) {
-            users.splice(i, 1);
+    _.each(users.projects, (project, i) => {
+        if (project.id == id) {
+            users.projects.splice(i, 1);
             res.send(users);
         }
     });
