@@ -9,26 +9,44 @@ router.get('/', (req, res) => {
     res.json(users);
 });
 
+router.get('/:id', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    const { id } = req.params;
+    _.each(users.projects, (project, i) => {
+        if (project.id == id) {
+            res.send(users.users[i]);
+        }
+    });
+});
+
 router.post('/', (req, res) => {
     const { first_name, last_name, username, projects } = req.body;
-    console.log(first_name)/* 
-    if (first_name && last_name && username && projects){ */
+    const project_name = req.body
+    if (first_name && last_name && username && projects){
         const id = users.users.length + 1;
         const newUser = {id, ...req.body};
         console.log(newUser)
         users.users.push(newUser);
         res.json(users);
-    /* } else {
+    } else if (project_name){
+        const id = users.projects.length + 1;
+        const newProject = {id, ...req.body};
+        console.log(newProject)
+        users.projects.push(newProject)
+        res.json(users)
+    } else {
         console.log('Wrong Request')
         res.send('Wrong Request');
-    } */
+    }
 });
 
 router.put('/:id', (req, res) => {
     const { id } = req.params;
+    console.log(id)
     const { first_name, last_name, username, projects } = req.body;
-    if (first_name && last_name && username && projects) {
-        _.each(users, (user, i) => {
+    console.log(req.body)/* 
+    if (first_name && last_name && username && projects) { */
+        _.each(users.users, (user, i) => {
             if (user.id == id ) {
                 user.first_name = first_name;
                 user.last_name = last_name;
@@ -37,9 +55,9 @@ router.put('/:id', (req, res) => {
                 res.json(users);
             }
         });
-    } else {
+    /* } else {
         res.json('Wrong request');
-    }
+    } */
 });
 
 router.delete('/:id', (req, res) => {
