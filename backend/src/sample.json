@@ -1,35 +1,45 @@
 {
-    "users": [{
-        "id": 1,    
-        "first_name": "Mateo",
-        "last_name": "Lopez",
-        "username": "malopez",
-        "projects": ["Proyecto1", "Proyecto2", "Proyecto3"]
-    },
-    {
-        "id": 2, 
-        "first_name": "Michael",
-        "last_name": "Palacio",
-        "username": "mipalac",
-        "projects": ["Proyecto1", "Proyecto2"]
-    },
-    {
-        "id": 3, 
-        "first_name": "Sebastián",
-        "last_name": "Delgado",
-        "username": "sedelgado",
-        "projects": ["Proyecto1", "Proyecto3"]
-    }],
-    "projects": [{
-        "id": 1,
-        "project_name": "Proyecto1"
-    }, 
-    {
-        "id": 2,
-        "project_name": "Proyecto2"
-    }, 
-    {
-        "id": 3,
-        "project_name": "Proyecto3"
-    }]
+	"users": [
+		{
+			"id": 1,
+			"first_name": "Mateo",
+			"last_name": "Lopez",
+			"username": "malopez",
+			"projects": ["Proyecto1", "Proyecto2", "Proyecto3"]
+		},
+		{
+			"id": 2,
+			"first_name": "Michael",
+			"last_name": "Palacio",
+			"username": "mipalac",
+			"projects": ["Proyecto1", "Proyecto2"]
+		},
+		{
+			"id": 3,
+			"first_name": "Sebastián",
+			"last_name": "Delgado",
+			"username": "sedelgado",
+			"projects": ["Proyecto1", "Proyecto3"]
+		}
+	],
+	"projects": [
+		{
+			"id": 1,
+			"project_name": "Proyecto1",
+			"location": "USA, America/Phoenix",
+			"added_date": "02/15/2022"
+		},
+		{
+			"id": 2,
+			"project_name": "Proyecto2",
+			"location": "USA, America/Phoenix",
+			"added_date": "03/20/2022"
+		},
+		{
+			"id": 3,
+			"project_name": "Proyecto3",
+			"location": "18600 N Porter Rd, Maricopa, AZ 85340, USA",
+			"added_date": "04/29/2022"
+		}
+	]
 }
