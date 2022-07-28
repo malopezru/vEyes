@@ -63,9 +63,9 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
 	res.set('Access-Control-Allow-Origin', '*')
 	const { id } = req.params
-	_.each(users.projects, (project, i) => {
-		if (project.id == id) {
-			users.projects.splice(i, 1)
+	_.each(users.users, (user, i) => {
+		if (user.id == id) {
+			users.users.splice(i, 1)
 			res.send(users)
 		}
 	})
